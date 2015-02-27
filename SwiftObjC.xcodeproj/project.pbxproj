@@ -10,6 +10,9 @@
 		4F3C8C721AA072B4001F0294 /* SwiftObjC.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3C8C711AA072B4001F0294 /* SwiftObjC.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F3C8C781AA072B4001F0294 /* SwiftObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F3C8C6C1AA072B4001F0294 /* SwiftObjC.framework */; };
 		4F3C8C7F1AA072B4001F0294 /* SwiftObjCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C8C7E1AA072B4001F0294 /* SwiftObjCTests.m */; };
+		4F3C8C8B1AA072CE001F0294 /* Player.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F3C8C891AA072CE001F0294 /* Player.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4F3C8C8C1AA072CE001F0294 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C8C8A1AA072CE001F0294 /* Player.m */; };
+		4F3C8C901AA07334001F0294 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3C8C8F1AA07334001F0294 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,9 @@
 		4F3C8C771AA072B4001F0294 /* SwiftObjCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftObjCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F3C8C7D1AA072B4001F0294 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F3C8C7E1AA072B4001F0294 /* SwiftObjCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwiftObjCTests.m; sourceTree = "<group>"; };
+		4F3C8C891AA072CE001F0294 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		4F3C8C8A1AA072CE001F0294 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		4F3C8C8F1AA07334001F0294 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 		4F3C8C621AA072B4001F0294 = {
 			isa = PBXGroup;
 			children = (
+				4F3C8C881AA072C1001F0294 /* Models */,
 				4F3C8C6E1AA072B4001F0294 /* SwiftObjC */,
 				4F3C8C7B1AA072B4001F0294 /* SwiftObjCTests */,
 				4F3C8C6D1AA072B4001F0294 /* Products */,
@@ -102,6 +109,16 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4F3C8C881AA072C1001F0294 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4F3C8C891AA072CE001F0294 /* Player.h */,
+				4F3C8C8A1AA072CE001F0294 /* Player.m */,
+				4F3C8C8F1AA07334001F0294 /* Game.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -110,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F3C8C721AA072B4001F0294 /* SwiftObjC.h in Headers */,
+				4F3C8C8B1AA072CE001F0294 /* Player.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +227,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F3C8C8C1AA072CE001F0294 /* Player.m in Sources */,
+				4F3C8C901AA07334001F0294 /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +338,7 @@
 		4F3C8C831AA072B4001F0294 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -327,12 +348,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		4F3C8C841AA072B4001F0294 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
